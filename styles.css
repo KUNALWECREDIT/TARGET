@@ -107,10 +107,17 @@ html, body { margin: 0; padding: 0; background: var(--bg); }
 }
 .eyebrow { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); }
 .topbar-title h2 { margin: 2px 0 0; font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
-.preview-flag {
-  display: inline-block; margin-top: 6px; font-size: 11px; font-weight: 700; color: var(--gold);
-  background: #FBF2E1; padding: 3px 9px; border-radius: 999px;
+.live-flag {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 11px; font-weight: 700;
+  color: var(--brand); background: var(--brand-pale); padding: 3px 9px 3px 8px; border-radius: 999px;
 }
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--brand-light);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.live-flag.offline { color: var(--danger); background: #FBEAE8; }
+.live-flag.offline .live-dot { display: none; }
 .topbar-controls { display: flex; align-items: center; gap: 10px; }
 .select-wrap { position: relative; }
 .select-wrap select {
@@ -152,6 +159,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); }
 }
 .publish-note svg { color: var(--brand); flex-shrink: 0; margin-top: 2px; }
 .publish-note code { background: rgba(11,79,74,0.1); padding: 1px 5px; border-radius: 4px; font-family: var(--mono); }
+.publish-note.error { background: #FBEAE8; color: var(--danger); }
+.publish-note.error svg { color: var(--danger); }
+.publish-note.error code { background: rgba(192,57,43,0.12); }
 
 .section-head { display: flex; align-items: center; gap: 12px; color: var(--brand); }
 .section-head h3 { margin: 0; font-size: 17px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }

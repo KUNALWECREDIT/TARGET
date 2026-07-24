@@ -1,23 +1,40 @@
-const { useState, useEffect, useMemo, useCallback } = React;
+const { useState, useEffect, useMemo } = React;
 
 /* ---------------------------------------------------------------
-   Ledger — Agent Performance Console (static, GitHub Pages build)
+   Ledger — Agent Performance Console (static site + Firebase)
 
-   How data publishing works on a static host:
-   - The site reads data/app-data.json and data/dis-data.json at
-     load time. Whatever is committed to the repo is what every
-     visitor (admin or sales) sees.
-   - Admin can upload a fresh .xlsx in the Upload tab. That parses
-     it and shows a LOCAL PREVIEW (saved to this browser's
-     localStorage only). To make it visible to everyone, download
-     the generated JSON and commit it into /data in the repo, then
-     push — GitHub Pages redeploys automatically in ~1 minute.
+   How data publishing works:
+   - Records live in a Firebase Firestore database (free tier),
+     not in files in the repo. The site subscribes to it in real
+     time, so the moment admin publishes a new file, every open
+     browser — admin or sales, any device — updates instantly,
+     no refresh, no redeploy.
+   - Publishing a file REPLACES the previous dataset for that file
+     (Applications or Disbursals) entirely.
+   - See README.md for the one-time Firebase setup (create a free
+     project, paste the config into firebase-config.js).
 --------------------------------------------------------------- */
 
 const USERS = {
   admin: { password: "admin1234", role: "admin", label: "Admin" },
   sales: { password: "12345678", role: "sales", label: "Sales" },
 };
+
+/* Firebase init — config comes from firebase-config.js (loaded
+   before this script). If it's still the placeholder, we run in a
+   disconnected state and show a setup notice instead of crashing. */
+let db = null;
+let firebaseReady = false;
+try {
+  const cfg = window.FIREBASE_CONFIG;
+  if (cfg && cfg.apiKey && cfg.apiKey.indexOf("PASTE_") !== 0) {
+    firebase.initializeApp(cfg);
+    db = firebase.firestore();
+    firebaseReady = true;
+  }
+} catch (e) {
+  console.error("Firebase init failed:", e);
+}
 
 const STATUS_ORDER = [
   "3. KYC Pending",
@@ -87,18 +104,6 @@ function initials(name) {
   if (!name) return "?";
   const parts = name.trim().split(/\s+/);
   return (parts[0][0] + (parts[1] ? parts[1][0] : "")).toUpperCase();
-}
-
-function downloadJSON(filename, data) {
-  const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
 }
 
 /* ----------------------- xlsx parsing --------------------------- */
@@ -206,70 +211,66 @@ function App() {
   const [disRecords, setDisRecords] = useState([]);
   const [appMeta, setAppMeta] = useState(null);
   const [disMeta, setDisMeta] = useState(null);
-  const [previewing, setPreviewing] = useState(false);
   const [tab, setTab] = useState("overview");
   const [selectedMonth, setSelectedMonth] = useState(null);
   const [salesDataset, setSalesDataset] = useState("app");
 
-  const loadData = useCallback(async () => {
-    setDataLoading(true);
-    let usedPreview = false;
-
-    // Published data (what's committed in the repo) — the source of
-    // truth for everyone visiting the site.
-    let a = [];
-    let d = [];
-    let am = null;
-    let dm = null;
-    try {
-      const res = await fetch("data/app-data.json", { cache: "no-store" });
-      if (res.ok) a = await res.json();
-    } catch (e) {}
-    try {
-      const res = await fetch("data/dis-data.json", { cache: "no-store" });
-      if (res.ok) d = await res.json();
-    } catch (e) {}
-    try {
-      const res = await fetch("data/app-meta.json", { cache: "no-store" });
-      if (res.ok) am = await res.json();
-    } catch (e) {}
-    try {
-      const res = await fetch("data/dis-meta.json", { cache: "no-store" });
-      if (res.ok) dm = await res.json();
-    } catch (e) {}
-
-    // Admin-only local preview layer: an upload that hasn't been
-    // committed to the repo yet. Never shown to the sales role.
-    if (session && session.role === "admin") {
-      try {
-        const pa = localStorage.getItem("preview-app-records");
-        if (pa) {
-          a = JSON.parse(pa);
-          am = JSON.parse(localStorage.getItem("preview-app-meta") || "null");
-          usedPreview = true;
-        }
-      } catch (e) {}
-      try {
-        const pd = localStorage.getItem("preview-dis-records");
-        if (pd) {
-          d = JSON.parse(pd);
-          dm = JSON.parse(localStorage.getItem("preview-dis-meta") || "null");
-          usedPreview = true;
-        }
-      } catch (e) {}
-    }
-
-    setAppRecords(a || []);
-    setDisRecords(d || []);
-    setAppMeta(am);
-    setDisMeta(dm);
-    setPreviewing(usedPreview);
-    setDataLoading(false);
-  }, [session]);
-
+  // Live subscription: once logged in, listen to both Firestore
+  // documents. Any publish — from any browser — flows straight
+  // into this state, no polling and no page reload.
   useEffect(() => {
-    if (session) loadData();
-  }, [session, loadData]);
+    if (!session) return;
+    if (!firebaseReady) {
+      setDataLoading(false);
+      return;
+    }
+    setDataLoading(true);
+
+    const unsubApp = db.collection("ledger").doc("app-data").onSnapshot(
+      (doc) => {
+        if (doc.exists) {
+          const data = doc.data();
+          try {
+            setAppRecords(JSON.parse(data.json));
+          } catch (e) {
+            setAppRecords([]);
+          }
+          setAppMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
+        } else {
+          setAppRecords([]);
+          setAppMeta(null);
+        }
+        setDataLoading(false);
+      },
+      (err) => {
+        console.error("app-data listener error:", err);
+        setDataLoading(false);
+      }
+    );
+
+    const unsubDis = db.collection("ledger").doc("dis-data").onSnapshot(
+      (doc) => {
+        if (doc.exists) {
+          const data = doc.data();
+          try {
+            setDisRecords(JSON.parse(data.json));
+          } catch (e) {
+            setDisRecords([]);
+          }
+          setDisMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
+        } else {
+          setDisRecords([]);
+          setDisMeta(null);
+        }
+      },
+      (err) => console.error("dis-data listener error:", err)
+    );
+
+    return () => {
+      unsubApp();
+      unsubDis();
+    };
+  }, [session]);
 
   const months = useMemo(() => availableMonths(appRecords, disRecords), [appRecords, disRecords]);
 
@@ -295,9 +296,7 @@ function App() {
           months={months}
           selectedMonth={selectedMonth}
           setSelectedMonth={setSelectedMonth}
-          onRefresh={loadData}
           loading={dataLoading}
-          previewing={previewing}
         />
         <div className="content">
           {isAdmin ? (
@@ -334,13 +333,7 @@ function App() {
                   emptyHint="Upload the Dis incentive file to see disbursal leaderboards."
                 />
               )}
-              {tab === "upload" && (
-                <UploadTab
-                  appMeta={appMeta}
-                  disMeta={disMeta}
-                  onUploaded={loadData}
-                />
-              )}
+              {tab === "upload" && <UploadTab appMeta={appMeta} disMeta={disMeta} />}
             </>
           ) : (
             <SalesTab
@@ -467,13 +460,21 @@ function Sidebar({ tab, setTab, isAdmin, onLogout }) {
 
 /* --------------------------- TopBar --------------------------- */
 
-function TopBar({ session, months, selectedMonth, setSelectedMonth, onRefresh, loading, previewing }) {
+function TopBar({ session, months, selectedMonth, setSelectedMonth, loading }) {
   return (
     <div className="topbar">
       <div className="topbar-title">
         <span className="eyebrow">Current period</span>
         <h2>{selectedMonth ? monthLabel(selectedMonth) : "No data yet"}</h2>
-        {previewing && <div className="preview-flag">Local preview — not yet published</div>}
+        {firebaseReady ? (
+          <div className="live-flag">
+            <span className="live-dot" /> {loading ? "Syncing…" : "Live"}
+          </div>
+        ) : (
+          <div className="live-flag offline">
+            <IconAlert size={11} /> Not connected — see firebase-config.js
+          </div>
+        )}
       </div>
       <div className="topbar-controls">
         {months.length > 0 && (
@@ -488,9 +489,6 @@ function TopBar({ session, months, selectedMonth, setSelectedMonth, onRefresh, l
             <IconChevron size={14} className="select-chevron" />
           </div>
         )}
-        <button className="icon-btn" onClick={onRefresh} title="Refresh data">
-          <IconRefresh size={15} className={loading ? "spin" : ""} />
-        </button>
         <div className="role-pill">{session.label}</div>
       </div>
     </div>
@@ -712,52 +710,57 @@ function StatusList({ entries }) {
 
 /* --------------------------- Upload (admin) --------------------------- */
 
-function UploadTab({ appMeta, disMeta, onUploaded }) {
+function UploadTab({ appMeta, disMeta }) {
   return (
     <div className="stack">
+      {!firebaseReady && (
+        <div className="card publish-note error">
+          <IconAlert size={16} />
+          <div>
+            Firebase isn't connected yet, so uploads can't be published. Open{" "}
+            <code>firebase-config.js</code> and paste in your project's config — see README.md for the
+            step-by-step.
+          </div>
+        </div>
+      )}
       <div className="card publish-note">
         <IconAlert size={16} />
         <div>
-          This site is static (GitHub Pages), so uploads here only preview in <b>this browser</b>.
-          To publish for everyone, download the JSON files below, replace the matching files in{" "}
-          <code>/data</code> in your repo, then commit &amp; push. Pages redeploys automatically in about a minute.
+          Publishing here <b>replaces</b> the current live dataset for that file — old rows are gone,
+          new rows take over — and every open browser (admin or sales, any device) updates instantly.
+          There's no undo, so double-check the row count before publishing.
         </div>
       </div>
       <UploadCard
         title="Applications file (APP)"
-        description="Expects columns including Name, applied_date, current_status, number. Publishes to data/app-data.json."
+        description="Expects columns including Name, applied_date, current_status, number."
         meta={appMeta}
         expectedKey="applied_date"
         transform={toAppRecords}
-        previewKey="preview-app-records"
-        previewMetaKey="preview-app-meta"
-        downloadName="app-data.json"
-        onSaved={onUploaded}
+        docId="app-data"
       />
       <UploadCard
         title="Disbursals file (Dis)"
-        description="Expects columns including Name, disbursal_date, disbursed_amt, number. Publishes to data/dis-data.json."
+        description="Expects columns including Name, disbursal_date, disbursed_amt, number."
         meta={disMeta}
         expectedKey="disbursal_date"
         transform={toDisRecords}
-        previewKey="preview-dis-records"
-        previewMetaKey="preview-dis-meta"
-        downloadName="dis-data.json"
-        onSaved={onUploaded}
+        docId="dis-data"
       />
     </div>
   );
 }
 
-function UploadCard({ title, description, meta, expectedKey, transform, previewKey, previewMetaKey, downloadName, onSaved }) {
-  const [status, setStatus] = useState("idle"); // idle | working | done | error
+function UploadCard({ title, description, meta, expectedKey, transform, docId }) {
+  const [status, setStatus] = useState("idle"); // idle | working | parsed | publishing | done | error
   const [message, setMessage] = useState("");
-  const [lastRecords, setLastRecords] = useState(null);
+  const [parsed, setParsed] = useState(null); // { records, fileName }
 
   const handleFile = async (e) => {
     const file = e.target.files[0];
     e.target.value = "";
     if (!file) return;
+    setParsed(null);
     setStatus("working");
     setMessage("Reading workbook…");
     try {
@@ -773,16 +776,32 @@ function UploadCard({ title, description, meta, expectedKey, transform, previewK
         setMessage("No usable rows found in this file.");
         return;
       }
-      const metaObj = { fileName: file.name, uploadedAt: new Date().toISOString(), rows: records.length };
-      localStorage.setItem(previewKey, JSON.stringify(records));
-      localStorage.setItem(previewMetaKey, JSON.stringify(metaObj));
-      setLastRecords(records);
-      setStatus("done");
-      setMessage(`Parsed ${records.length} rows — previewing in this browser only.`);
-      onSaved();
+      setParsed({ records, fileName: file.name });
+      setStatus("parsed");
+      setMessage(`Parsed ${records.length} rows. Review the count, then publish to make it live.`);
     } catch (err) {
       setStatus("error");
       setMessage("Couldn't read that file. Make sure it's a valid .xlsx export.");
+    }
+  };
+
+  const publish = async () => {
+    if (!parsed || !firebaseReady) return;
+    setStatus("publishing");
+    setMessage("Publishing…");
+    try {
+      await db.collection("ledger").doc(docId).set({
+        json: JSON.stringify(parsed.records),
+        fileName: parsed.fileName,
+        uploadedAt: new Date().toISOString(),
+        rows: parsed.records.length,
+      });
+      setStatus("done");
+      setMessage(`Published — live for everyone now (${parsed.records.length} rows replaced the old data).`);
+      setParsed(null);
+    } catch (err) {
+      setStatus("error");
+      setMessage("Publish failed: " + err.message);
     }
   };
 
@@ -795,14 +814,19 @@ function UploadCard({ title, description, meta, expectedKey, transform, previewK
       <p className="upload-desc">{description}</p>
       {meta && (
         <div className="meta-chip">
-          <IconCheck size={13} /> Current: {meta.fileName} · {meta.rows} rows · uploaded{" "}
+          <IconCheck size={13} /> Live now: {meta.fileName} · {meta.rows} rows · published{" "}
           {new Date(meta.uploadedAt).toLocaleString()}
         </div>
       )}
       <label className="upload-drop">
         <IconUpload size={20} />
         <span>{status === "working" ? "Processing…" : "Click to choose an .xlsx file"}</span>
-        <input type="file" accept=".xlsx,.xls" onChange={handleFile} disabled={status === "working"} />
+        <input
+          type="file"
+          accept=".xlsx,.xls"
+          onChange={handleFile}
+          disabled={status === "working" || status === "publishing" || !firebaseReady}
+        />
       </label>
       {message && (
         <div className={"upload-msg " + (status === "error" ? "error" : status === "done" ? "success" : "")}>
@@ -810,9 +834,9 @@ function UploadCard({ title, description, meta, expectedKey, transform, previewK
           {message}
         </div>
       )}
-      {lastRecords && (
-        <button className="btn-secondary" onClick={() => downloadJSON(downloadName, lastRecords)}>
-          Download {downloadName}
+      {parsed && status === "parsed" && (
+        <button className="btn-primary" style={{ marginTop: 12 }} onClick={publish}>
+          Publish live — replaces current {title.split(" file")[0].toLowerCase()}
         </button>
       )}
     </div>
