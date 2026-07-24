@@ -1,18 +1,20 @@
-const { useState, useEffect, useMemo } = React;
+const { useState, useEffect, useMemo, useCallback } = React;
 
 /* ---------------------------------------------------------------
-   Ledger — Agent Performance Console (static site + Firebase)
+   Ledger — Agent Performance Console (GitHub-only build)
 
    How data publishing works:
-   - Records live in a Firebase Firestore database (free tier),
-     not in files in the repo. The site subscribes to it in real
-     time, so the moment admin publishes a new file, every open
-     browser — admin or sales, any device — updates instantly,
-     no refresh, no redeploy.
-   - Publishing a file REPLACES the previous dataset for that file
-     (Applications or Disbursals) entirely.
-   - See README.md for the one-time Firebase setup (create a free
-     project, paste the config into firebase-config.js).
+   - Records live as JSON files inside data/ in this same repo —
+     no external database, no paid service.
+   - Reading: every visitor's browser fetches data/app-data.json
+     and data/dis-data.json straight from the deployed site, and
+     re-checks every 30s so open tabs pick up updates on their own.
+   - Publishing: admin pastes a GitHub token once (stored only in
+     their own browser). Clicking "Publish" then calls the GitHub
+     API directly from the browser to commit the new file into
+     data/ on the main branch, replacing the old one. GitHub Pages
+     rebuilds automatically — usually live within 30-90 seconds.
+   - See README.md for the one-time token setup.
 --------------------------------------------------------------- */
 
 const USERS = {
@@ -20,20 +22,65 @@ const USERS = {
   sales: { password: "12345678", role: "sales", label: "Sales" },
 };
 
-/* Firebase init — config comes from firebase-config.js (loaded
-   before this script). If it's still the placeholder, we run in a
-   disconnected state and show a setup notice instead of crashing. */
-let db = null;
-let firebaseReady = false;
-try {
-  const cfg = window.FIREBASE_CONFIG;
-  if (cfg && cfg.apiKey && cfg.apiKey.indexOf("PASTE_") !== 0) {
-    firebase.initializeApp(cfg);
-    db = firebase.firestore();
-    firebaseReady = true;
+const GH_SETTINGS_KEY = "gh-publish-settings";
+
+function loadGhSettings() {
+  try {
+    const s = JSON.parse(localStorage.getItem(GH_SETTINGS_KEY));
+    return { owner: "", repo: "", branch: "main", token: "", ...(s || {}) };
+  } catch (e) {
+    return { owner: "", repo: "", branch: "main", token: "" };
   }
-} catch (e) {
-  console.error("Firebase init failed:", e);
+}
+
+function saveGhSettings(s) {
+  localStorage.setItem(GH_SETTINGS_KEY, JSON.stringify(s));
+}
+
+function utf8ToBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+/* Publishes contentObj (as pretty-printed JSON) to <path> in the
+   configured repo, creating or overwriting it as needed. */
+async function ghPublishFile(settings, path, contentObj, message) {
+  const { owner, repo, branch, token } = settings;
+  if (!owner || !repo || !token) {
+    throw new Error("Set your GitHub owner, repo, and token first.");
+  }
+  const api = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const headers = {
+    Authorization: `token ${token}`,
+    Accept: "application/vnd.github+json",
+  };
+
+  // Look up the current file's sha (required to overwrite it). A
+  // 404 just means the file doesn't exist yet — that's fine.
+  let sha = null;
+  const getRes = await fetch(`${api}?ref=${encodeURIComponent(branch || "main")}`, { headers });
+  if (getRes.ok) {
+    const data = await getRes.json();
+    sha = data.sha;
+  } else if (getRes.status !== 404) {
+    const err = await getRes.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub error ${getRes.status} while checking the existing file.`);
+  }
+
+  const putRes = await fetch(api, {
+    method: "PUT",
+    headers: { ...headers, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message,
+      content: utf8ToBase64(JSON.stringify(contentObj, null, 2)),
+      branch: branch || "main",
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  if (!putRes.ok) {
+    const err = await putRes.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub error ${putRes.status} while publishing.`);
+  }
+  return putRes.json();
 }
 
 const STATUS_ORDER = [
@@ -215,62 +262,35 @@ function App() {
   const [selectedMonth, setSelectedMonth] = useState(null);
   const [salesDataset, setSalesDataset] = useState("app");
 
-  // Live subscription: once logged in, listen to both Firestore
-  // documents. Any publish — from any browser — flows straight
-  // into this state, no polling and no page reload.
+  const loadData = useCallback(async () => {
+    setDataLoading(true);
+    try {
+      const res = await fetch("data/app-data.json", { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        setAppRecords(data.records || []);
+        setAppMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
+      }
+    } catch (e) {}
+    try {
+      const res = await fetch("data/dis-data.json", { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        setDisRecords(data.records || []);
+        setDisMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
+      }
+    } catch (e) {}
+    setDataLoading(false);
+  }, []);
+
+  // Load on login, then keep polling in the background so open
+  // tabs pick up a fresh publish without anyone hitting refresh.
   useEffect(() => {
     if (!session) return;
-    if (!firebaseReady) {
-      setDataLoading(false);
-      return;
-    }
-    setDataLoading(true);
-
-    const unsubApp = db.collection("ledger").doc("app-data").onSnapshot(
-      (doc) => {
-        if (doc.exists) {
-          const data = doc.data();
-          try {
-            setAppRecords(JSON.parse(data.json));
-          } catch (e) {
-            setAppRecords([]);
-          }
-          setAppMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
-        } else {
-          setAppRecords([]);
-          setAppMeta(null);
-        }
-        setDataLoading(false);
-      },
-      (err) => {
-        console.error("app-data listener error:", err);
-        setDataLoading(false);
-      }
-    );
-
-    const unsubDis = db.collection("ledger").doc("dis-data").onSnapshot(
-      (doc) => {
-        if (doc.exists) {
-          const data = doc.data();
-          try {
-            setDisRecords(JSON.parse(data.json));
-          } catch (e) {
-            setDisRecords([]);
-          }
-          setDisMeta({ fileName: data.fileName, uploadedAt: data.uploadedAt, rows: data.rows });
-        } else {
-          setDisRecords([]);
-          setDisMeta(null);
-        }
-      },
-      (err) => console.error("dis-data listener error:", err)
-    );
-
-    return () => {
-      unsubApp();
-      unsubDis();
-    };
-  }, [session]);
+    loadData();
+    const id = setInterval(loadData, 30000);
+    return () => clearInterval(id);
+  }, [session, loadData]);
 
   const months = useMemo(() => availableMonths(appRecords, disRecords), [appRecords, disRecords]);
 
@@ -296,6 +316,7 @@ function App() {
           months={months}
           selectedMonth={selectedMonth}
           setSelectedMonth={setSelectedMonth}
+          onRefresh={loadData}
           loading={dataLoading}
         />
         <div className="content">
@@ -333,7 +354,7 @@ function App() {
                   emptyHint="Upload the Dis incentive file to see disbursal leaderboards."
                 />
               )}
-              {tab === "upload" && <UploadTab appMeta={appMeta} disMeta={disMeta} />}
+              {tab === "upload" && <UploadTab appMeta={appMeta} disMeta={disMeta} onPublished={loadData} />}
             </>
           ) : (
             <SalesTab
@@ -460,21 +481,15 @@ function Sidebar({ tab, setTab, isAdmin, onLogout }) {
 
 /* --------------------------- TopBar --------------------------- */
 
-function TopBar({ session, months, selectedMonth, setSelectedMonth, loading }) {
+function TopBar({ session, months, selectedMonth, setSelectedMonth, onRefresh, loading }) {
   return (
     <div className="topbar">
       <div className="topbar-title">
         <span className="eyebrow">Current period</span>
         <h2>{selectedMonth ? monthLabel(selectedMonth) : "No data yet"}</h2>
-        {firebaseReady ? (
-          <div className="live-flag">
-            <span className="live-dot" /> {loading ? "Syncing…" : "Live"}
-          </div>
-        ) : (
-          <div className="live-flag offline">
-            <IconAlert size={11} /> Not connected — see firebase-config.js
-          </div>
-        )}
+        <div className="live-flag">
+          <span className="live-dot" /> {loading ? "Checking for updates…" : "Auto-refreshes every 30s"}
+        </div>
       </div>
       <div className="topbar-controls">
         {months.length > 0 && (
@@ -489,6 +504,9 @@ function TopBar({ session, months, selectedMonth, setSelectedMonth, loading }) {
             <IconChevron size={14} className="select-chevron" />
           </div>
         )}
+        <button className="icon-btn" onClick={onRefresh} title="Refresh now">
+          <IconRefresh size={15} className={loading ? "spin" : ""} />
+        </button>
         <div className="role-pill">{session.label}</div>
       </div>
     </div>
@@ -710,48 +728,115 @@ function StatusList({ entries }) {
 
 /* --------------------------- Upload (admin) --------------------------- */
 
-function UploadTab({ appMeta, disMeta }) {
+function UploadTab({ appMeta, disMeta, onPublished }) {
+  const [settings, setSettings] = useState(loadGhSettings);
+
   return (
     <div className="stack">
-      {!firebaseReady && (
-        <div className="card publish-note error">
-          <IconAlert size={16} />
-          <div>
-            Firebase isn't connected yet, so uploads can't be published. Open{" "}
-            <code>firebase-config.js</code> and paste in your project's config — see README.md for the
-            step-by-step.
-          </div>
-        </div>
-      )}
+      <GitHubSettingsCard settings={settings} setSettings={setSettings} />
+
       <div className="card publish-note">
         <IconAlert size={16} />
         <div>
-          Publishing here <b>replaces</b> the current live dataset for that file — old rows are gone,
-          new rows take over — and every open browser (admin or sales, any device) updates instantly.
-          There's no undo, so double-check the row count before publishing.
+          Publishing here commits straight to <code>data/</code> in your GitHub repo and{" "}
+          <b>replaces</b> the old file entirely. GitHub Pages then rebuilds automatically — usually
+          live for everyone within 30–90 seconds. There's no undo, so double-check the row count first.
         </div>
       </div>
+
       <UploadCard
         title="Applications file (APP)"
-        description="Expects columns including Name, applied_date, current_status, number."
+        description="Expects columns including Name, applied_date, current_status, number. Publishes to data/app-data.json."
         meta={appMeta}
         expectedKey="applied_date"
         transform={toAppRecords}
-        docId="app-data"
+        dataPath="data/app-data.json"
+        settings={settings}
+        onPublished={onPublished}
       />
       <UploadCard
         title="Disbursals file (Dis)"
-        description="Expects columns including Name, disbursal_date, disbursed_amt, number."
+        description="Expects columns including Name, disbursal_date, disbursed_amt, number. Publishes to data/dis-data.json."
         meta={disMeta}
         expectedKey="disbursal_date"
         transform={toDisRecords}
-        docId="dis-data"
+        dataPath="data/dis-data.json"
+        settings={settings}
+        onPublished={onPublished}
       />
     </div>
   );
 }
 
-function UploadCard({ title, description, meta, expectedKey, transform, docId }) {
+function GitHubSettingsCard({ settings, setSettings }) {
+  const [saved, setSaved] = useState(false);
+  const configured = settings.owner && settings.repo && settings.token;
+
+  const update = (field) => (e) => {
+    setSettings((s) => ({ ...s, [field]: e.target.value }));
+    setSaved(false);
+  };
+
+  const save = () => {
+    saveGhSettings(settings);
+    setSaved(true);
+  };
+
+  return (
+    <div className="card">
+      <div className="card-head">
+        <IconLock size={17} />
+        <h3>Publishing destination</h3>
+      </div>
+      <p className="upload-desc">
+        Where "Publish" pushes files to. Saved only in this browser — never committed to the repo. Needs
+        a GitHub personal access token with <b>Contents: Read and write</b> on this one repo (see
+        README.md for how to create one).
+      </p>
+      <div className="gh-settings-grid">
+        <label className="field">
+          <span className="field-label">Repo owner</span>
+          <div className="field-input">
+            <input value={settings.owner} onChange={update("owner")} placeholder="e.g. yourusername" />
+          </div>
+        </label>
+        <label className="field">
+          <span className="field-label">Repo name</span>
+          <div className="field-input">
+            <input value={settings.repo} onChange={update("repo")} placeholder="e.g. agent-performance-ledger" />
+          </div>
+        </label>
+        <label className="field">
+          <span className="field-label">Branch</span>
+          <div className="field-input">
+            <input value={settings.branch} onChange={update("branch")} placeholder="main" />
+          </div>
+        </label>
+        <label className="field">
+          <span className="field-label">Personal access token</span>
+          <div className="field-input">
+            <input type="password" value={settings.token} onChange={update("token")} placeholder="github_pat_…" />
+          </div>
+        </label>
+      </div>
+      <button className="btn-secondary" onClick={save}>
+        Save settings
+      </button>
+      {saved && (
+        <div className="upload-msg success">
+          <IconCheck size={14} /> Saved in this browser.
+        </div>
+      )}
+      {!configured && (
+        <div className="upload-msg error">
+          <IconAlert size={14} /> Fill in owner, repo, and token before publishing.
+        </div>
+      )}
+    </div>
+  );
+}
+
+function UploadCard({ title, description, meta, expectedKey, transform, dataPath, settings, onPublished }) {
   const [status, setStatus] = useState("idle"); // idle | working | parsed | publishing | done | error
   const [message, setMessage] = useState("");
   const [parsed, setParsed] = useState(null); // { records, fileName }
@@ -778,7 +863,7 @@ function UploadCard({ title, description, meta, expectedKey, transform, docId })
       }
       setParsed({ records, fileName: file.name });
       setStatus("parsed");
-      setMessage(`Parsed ${records.length} rows. Review the count, then publish to make it live.`);
+      setMessage(`Parsed ${records.length} rows. Review the count, then publish to push it to GitHub.`);
     } catch (err) {
       setStatus("error");
       setMessage("Couldn't read that file. Make sure it's a valid .xlsx export.");
@@ -786,19 +871,23 @@ function UploadCard({ title, description, meta, expectedKey, transform, docId })
   };
 
   const publish = async () => {
-    if (!parsed || !firebaseReady) return;
+    if (!parsed) return;
     setStatus("publishing");
-    setMessage("Publishing…");
+    setMessage("Publishing to GitHub…");
     try {
-      await db.collection("ledger").doc(docId).set({
-        json: JSON.stringify(parsed.records),
+      const payload = {
         fileName: parsed.fileName,
         uploadedAt: new Date().toISOString(),
         rows: parsed.records.length,
-      });
+        records: parsed.records,
+      };
+      await ghPublishFile(settings, dataPath, payload, `Publish ${title}: ${parsed.records.length} rows`);
       setStatus("done");
-      setMessage(`Published — live for everyone now (${parsed.records.length} rows replaced the old data).`);
+      setMessage(
+        `Pushed to GitHub (${parsed.records.length} rows). Pages usually rebuilds within 30–90 seconds.`
+      );
       setParsed(null);
+      if (onPublished) onPublished();
     } catch (err) {
       setStatus("error");
       setMessage("Publish failed: " + err.message);
@@ -825,7 +914,7 @@ function UploadCard({ title, description, meta, expectedKey, transform, docId })
           type="file"
           accept=".xlsx,.xls"
           onChange={handleFile}
-          disabled={status === "working" || status === "publishing" || !firebaseReady}
+          disabled={status === "working" || status === "publishing"}
         />
       </label>
       {message && (
@@ -836,7 +925,7 @@ function UploadCard({ title, description, meta, expectedKey, transform, docId })
       )}
       {parsed && status === "parsed" && (
         <button className="btn-primary" style={{ marginTop: 12 }} onClick={publish}>
-          Publish live — replaces current {title.split(" file")[0].toLowerCase()}
+          Publish — replaces current {title.split(" file")[0].toLowerCase()}
         </button>
       )}
     </div>
