@@ -1,7 +1,7 @@
 {
-  "fileName": "ofeeeee.xlsx",
-  "uploadedAt": "2026-07-25T06:08:02.696Z",
-  "rows": 2372,
+  "fileName": "Offereeeee.xlsx",
+  "uploadedAt": "2026-07-25T11:09:32.556Z",
+  "rows": 2482,
   "records": [
     {
       "agent": "Khushi Kanwar Ranawat",
@@ -14234,6 +14234,666 @@
       "date": "2026-07-23",
       "status": "3. KYC Pending",
       "number": "9905893283"
+    },
+    {
+      "agent": "Bharti Sharma",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6266616903"
+    },
+    {
+      "agent": "Kusum",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "6260302323"
+    },
+    {
+      "agent": "Rudraksha Gandharv",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6352549791"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "6304691858"
+    },
+    {
+      "agent": "Ankit Jaiswal",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "6303242840"
+    },
+    {
+      "agent": "Neelam Vaishnav",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "6369460933"
+    },
+    {
+      "agent": "Mohammad Iftkar",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "6366252927"
+    },
+    {
+      "agent": "Niyati Puri",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6370467112"
+    },
+    {
+      "agent": "Teena Vaishnav",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6380858829"
+    },
+    {
+      "agent": "Komal Kanwar Chouhan",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6396982215"
+    },
+    {
+      "agent": "Payal Khatik",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6900796336"
+    },
+    {
+      "agent": "Komal Kanwar Chouhan",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "6388641397"
+    },
+    {
+      "agent": "Shahista Bano",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7017449447"
+    },
+    {
+      "agent": "Neelam Vaishnav",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "7022706197"
+    },
+    {
+      "agent": "Neelam Vaishnav",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7032840464"
+    },
+    {
+      "agent": "Divya Kanwar Gahlot",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7043911687"
+    },
+    {
+      "agent": "Aarti Regar",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7057043187"
+    },
+    {
+      "agent": "Alka",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7057234917"
+    },
+    {
+      "agent": "Komal Kanwar Chouhan",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7058095965"
+    },
+    {
+      "agent": "LATA DAMAMI",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7060050019"
+    },
+    {
+      "agent": "Babu lal Teli",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7083719963"
+    },
+    {
+      "agent": "Ankit Jaiswal",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "7097625631"
+    },
+    {
+      "agent": "Alka",
+      "date": "2026-07-24",
+      "status": "9. Agreement Pending",
+      "number": "7351091082"
+    },
+    {
+      "agent": "Isha Kumawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7262033922"
+    },
+    {
+      "agent": "Mangla Budha",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7330832803"
+    },
+    {
+      "agent": "Neelam Vaishnav",
+      "date": "2026-07-24",
+      "status": "11. Disbursed",
+      "number": "7620562200"
+    },
+    {
+      "agent": "Isha Kumawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7648876152"
+    },
+    {
+      "agent": "Bharti Sharma",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7748959586"
+    },
+    {
+      "agent": "Payal Dhaker",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7751864287"
+    },
+    {
+      "agent": "Rehan Mohammad",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7738596643"
+    },
+    {
+      "agent": "Rehan Mohammad",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7854919374"
+    },
+    {
+      "agent": "Anjali Rao",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7774972390"
+    },
+    {
+      "agent": "Niyati Puri",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7807700729"
+    },
+    {
+      "agent": "Niyati Puri",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "7898474019"
+    },
+    {
+      "agent": "Rituraj Gayari",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "7979058844"
+    },
+    {
+      "agent": "Pooja Kumari Kharol",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "8000328174"
+    },
+    {
+      "agent": "Anjali Rao",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8086224652"
+    },
+    {
+      "agent": "Banty Kanwar",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8102458092"
+    },
+    {
+      "agent": "Khushi Chanal",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "8095786186"
+    },
+    {
+      "agent": "Kavita Solanki",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8097790435"
+    },
+    {
+      "agent": "Khushi Kanwar Ranawat",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "8127795590"
+    },
+    {
+      "agent": "LATA DAMAMI",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "8239294633"
+    },
+    {
+      "agent": "Khushi Kanwar Ranawat",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "8368032788"
+    },
+    {
+      "agent": "Vaibhav Kumar Tailor",
+      "date": "2026-07-24",
+      "status": "4. Selfie Pending",
+      "number": "8431813401"
+    },
+    {
+      "agent": "Reena Mali",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "8390959541"
+    },
+    {
+      "agent": "Savita Suwalka",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8434320235"
+    },
+    {
+      "agent": "Ankit Jaiswal",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8445922764"
+    },
+    {
+      "agent": "Khushi Chanal",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "8452951798"
+    },
+    {
+      "agent": "Mansa Kanwar Shaktawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8505805832"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "11. Disbursed",
+      "number": "8559897322"
+    },
+    {
+      "agent": "Alka",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8605543907"
+    },
+    {
+      "agent": "Rituraj Gayari",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8650512420"
+    },
+    {
+      "agent": "Khushi Chanal",
+      "date": "2026-07-24",
+      "status": "5. IMPS Pending",
+      "number": "8474842701"
+    },
+    {
+      "agent": "Ruksar Banu",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8600933672"
+    },
+    {
+      "agent": "Rituraj Gayari",
+      "date": "2026-07-24",
+      "status": "11. Disbursed",
+      "number": "8532924951"
+    },
+    {
+      "agent": "Anjali Rao",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8652287595"
+    },
+    {
+      "agent": "Khushi Chanal",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8671867161"
+    },
+    {
+      "agent": "Monu Kanwar",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8768946780"
+    },
+    {
+      "agent": "Sharda Kanwar Gahlot",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8770650725"
+    },
+    {
+      "agent": "Mansa Kanwar Shaktawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8788575051"
+    },
+    {
+      "agent": "Pooja Kumari Kharol",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8780997116"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "8789672784"
+    },
+    {
+      "agent": "Mausami Kumari",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8821031664"
+    },
+    {
+      "agent": "Rituraj Gayari",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "8816995556"
+    },
+    {
+      "agent": "Vaibhav Kumar Tailor",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8825199878"
+    },
+    {
+      "agent": "Yasmin Mansuri",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8824188390"
+    },
+    {
+      "agent": "Pooja Kumari Kharol",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "8808503861"
+    },
+    {
+      "agent": "Yasmin Mansuri",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "8896930937"
+    },
+    {
+      "agent": "Ankit Jaiswal",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "9065787377"
+    },
+    {
+      "agent": "Madeena Banu",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "9079171382"
+    },
+    {
+      "agent": "Sharda Kanwar Gahlot",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "9038287209"
+    },
+    {
+      "agent": "Payal Khatik",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "9113775371"
+    },
+    {
+      "agent": "Jatin Jonwal",
+      "date": "2026-07-24",
+      "status": "4. Selfie Pending",
+      "number": "9261613232"
+    },
+    {
+      "agent": "Mona Dhaker",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9311295751"
+    },
+    {
+      "agent": "Teena Vaishnav",
+      "date": "2026-07-24",
+      "status": "11. Disbursed",
+      "number": "9442059111"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "9456844184"
+    },
+    {
+      "agent": "Vaibhav Kumar Tailor",
+      "date": "2026-07-24",
+      "status": "6. Submit Pending",
+      "number": "9481176763"
+    },
+    {
+      "agent": "Nazmin Mansuri",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9500145564"
+    },
+    {
+      "agent": "Yasmin Mansuri",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "9496853342"
+    },
+    {
+      "agent": "Khushi Kanwar Ranawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9545551287"
+    },
+    {
+      "agent": "Khushi Chanal",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9538272483"
+    },
+    {
+      "agent": "LATA DAMAMI",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9571205722"
+    },
+    {
+      "agent": "Mohammad Iftkar",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "9571632820"
+    },
+    {
+      "agent": "Babu lal Teli",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9548990265"
+    },
+    {
+      "agent": "Bharti Sharma",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9591333477"
+    },
+    {
+      "agent": "Sofiya Banu Dayer",
+      "date": "2026-07-24",
+      "status": "Post-Submit Rejected",
+      "number": "9588131897"
+    },
+    {
+      "agent": "LATA DAMAMI",
+      "date": "2026-07-24",
+      "status": "Post-Submit Rejected",
+      "number": "9632685339"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9606224797"
+    },
+    {
+      "agent": "Savita Suwalka",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9645621214"
+    },
+    {
+      "agent": "LATA DAMAMI",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9752685820"
+    },
+    {
+      "agent": "Sunil Banjara",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9749296227"
+    },
+    {
+      "agent": "Bharti Sharma",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9763553294"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "7. Waiting for document upload",
+      "number": "9823202123"
+    },
+    {
+      "agent": "Minal Sharma",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9818103684"
+    },
+    {
+      "agent": "Jatin Jonwal",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9818437810"
+    },
+    {
+      "agent": "Rudraksha Gandharv",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "9824107639"
+    },
+    {
+      "agent": "Teena Vaishnav",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9848302781"
+    },
+    {
+      "agent": "Ankit Jaiswal",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9878699570"
+    },
+    {
+      "agent": "Khushi Kanwar Ranawat",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9890592673"
+    },
+    {
+      "agent": "Ruksar Banu",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9891577065"
+    },
+    {
+      "agent": "Ruksar Banu",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9892127866"
+    },
+    {
+      "agent": "Mangla Budha",
+      "date": "2026-07-24",
+      "status": "5. IMPS Pending",
+      "number": "9917684323"
+    },
+    {
+      "agent": "Divya Kanwar Gahlot",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "9948225597"
+    },
+    {
+      "agent": "Teena Vaishnav",
+      "date": "2026-07-24",
+      "status": "11. Disbursed",
+      "number": "9970507565"
+    },
+    {
+      "agent": "Mangla Budha",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9976236415"
+    },
+    {
+      "agent": "Deepak Kumar Khatik",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9966335538"
+    },
+    {
+      "agent": "Banty Kanwar",
+      "date": "2026-07-24",
+      "status": "Post-Submit Rejected",
+      "number": "9981150714"
+    },
+    {
+      "agent": "Ruksar Banu",
+      "date": "2026-07-24",
+      "status": "3. KYC Pending",
+      "number": "9988833227"
+    },
+    {
+      "agent": "Vikram Singh Chouhan",
+      "date": "2026-07-24",
+      "status": "10. Disbursal initiated",
+      "number": "9290680728"
+    },
+    {
+      "agent": "Sugna Nayak",
+      "date": "2026-07-24",
+      "status": "8. NACH Pending",
+      "number": "9719276181"
     }
   ]
 }
