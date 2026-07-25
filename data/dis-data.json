@@ -1,7 +1,7 @@
 {
-  "fileName": "dis.xlsx",
-  "uploadedAt": "2026-07-25T06:08:18.905Z",
-  "rows": 1156,
+  "fileName": "dissssssssss.xlsx",
+  "uploadedAt": "2026-07-25T11:09:47.558Z",
+  "rows": 1228,
   "records": [
     {
       "agent": "Vanshree Dhobi",
@@ -4732,12 +4732,6 @@
       "number": "9598749870"
     },
     {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "6003466225"
-    },
-    {
       "agent": "Bhawna kanwar",
       "date": "2026-07-17",
       "amt": 30000,
@@ -4751,45 +4745,15 @@
     },
     {
       "agent": "Devendra Regar",
-      "date": "2026-07-19",
-      "amt": 50000,
-      "number": "6309436639"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "6376583832"
-    },
-    {
-      "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 50000,
       "number": "6388072642"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "6372955690"
     },
     {
       "agent": "Vanshree Dhobi",
       "date": "2026-07-17",
       "amt": 7000,
       "number": "6398870281"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 85000,
-      "number": "7002294852"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 15000,
-      "number": "6392993813"
     },
     {
       "agent": "Bhawna kanwar",
@@ -4804,46 +4768,10 @@
       "number": "7012385541"
     },
     {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 25000,
-      "number": "7032722127"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "7033579213"
-    },
-    {
       "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 10000,
       "number": "7046395954"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "7066872990"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "7250088551"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7207592839"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "7289823355"
     },
     {
       "agent": "Kiran Malii",
@@ -4859,51 +4787,9 @@
     },
     {
       "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7457061312"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 75000,
-      "number": "7411365947"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "7501792145"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
       "date": "2026-07-17",
       "amt": 10000,
       "number": "7619580243"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7648024358"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 7000,
-      "number": "7694955656"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7668093062"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 7000,
-      "number": "7727862777"
     },
     {
       "agent": "Vanshree Dhobi",
@@ -4924,46 +4810,10 @@
       "number": "7830598458"
     },
     {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7892094725"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "7905450912"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-19",
-      "amt": 10000,
-      "number": "7995284884"
-    },
-    {
       "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 10000,
       "number": "8009549505"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 85000,
-      "number": "8056686880"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "8076906693"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 25000,
-      "number": "8073286315"
     },
     {
       "agent": "Kajal Saini",
@@ -4976,18 +4826,6 @@
       "date": "2026-07-17",
       "amt": 40000,
       "number": "8128234100"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "8304967436"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-19",
-      "amt": 50000,
-      "number": "8343080149"
     },
     {
       "agent": "NOHARIN KHANAM",
@@ -5003,12 +4841,6 @@
     },
     {
       "agent": "Kajal Saini",
-      "date": "2026-07-19",
-      "amt": 50000,
-      "number": "8445602414"
-    },
-    {
-      "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 50000,
       "number": "8459769381"
@@ -5020,70 +4852,10 @@
       "number": "8368958739"
     },
     {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "8500825699"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-19",
-      "amt": 50000,
-      "number": "8482988170"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 25000,
-      "number": "8533068371"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "8591116524"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 15000,
-      "number": "8618657559"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-19",
-      "amt": 60000,
-      "number": "8607665673"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 35000,
-      "number": "8617084635"
-    },
-    {
       "agent": "Bhawna kanwar",
       "date": "2026-07-17",
       "amt": 35000,
       "number": "8695810335"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "8698443893"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 60000,
-      "number": "8754406139"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-19",
-      "amt": 10000,
-      "number": "8695224074"
     },
     {
       "agent": "Bhawna kanwar",
@@ -5104,22 +4876,10 @@
       "number": "8877559518"
     },
     {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "8892205557"
-    },
-    {
       "agent": "Bhawna kanwar",
       "date": "2026-07-17",
       "amt": 25000,
       "number": "8927378795"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 7000,
-      "number": "8928284287"
     },
     {
       "agent": "NOHARIN KHANAM",
@@ -5128,28 +4888,10 @@
       "number": "8923092821"
     },
     {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "8948055199"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "8948840375"
-    },
-    {
       "agent": "NOHARIN KHANAM",
       "date": "2026-07-17",
       "amt": 45000,
       "number": "8978689966"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 7000,
-      "number": "8888111656"
     },
     {
       "agent": "Devendra Regar",
@@ -5171,93 +4913,9 @@
     },
     {
       "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9024249937"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9001644162"
-    },
-    {
-      "agent": "Kiran Malii",
       "date": "2026-07-17",
       "amt": 50000,
       "number": "9140636079"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "9140708621"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9130933756"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-19",
-      "amt": 40000,
-      "number": "9128224720"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 75000,
-      "number": "9158061499"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "9144926568"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "9159442125"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-19",
-      "amt": 20000,
-      "number": "9178313831"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "9328266432"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "9334419365"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9301630834"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9348719912"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "9315373672"
     },
     {
       "agent": "Bhawna kanwar",
@@ -5266,22 +4924,10 @@
       "number": "9348318140"
     },
     {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 25000,
-      "number": "9316683462"
-    },
-    {
       "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 35000,
       "number": "9370411282"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9414931596"
     },
     {
       "agent": "NOHARIN KHANAM",
@@ -5303,24 +4949,6 @@
     },
     {
       "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9536877887"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 100000,
-      "number": "9551287952"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "9538623831"
-    },
-    {
-      "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 30000,
       "number": "9566861295"
@@ -5332,52 +4960,10 @@
       "number": "9560822845"
     },
     {
-      "agent": "Kiran Malii",
-      "date": "2026-07-19",
-      "amt": 10000,
-      "number": "9594583029"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "9599093929"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 60000,
-      "number": "9606312815"
-    },
-    {
       "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 40000,
       "number": "9572142622"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 75000,
-      "number": "9624167501"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9638981970"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "9628683814"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-19",
-      "amt": 30000,
-      "number": "9666417143"
     },
     {
       "agent": "Devendra Regar",
@@ -5386,94 +4972,16 @@
       "number": "9668291848"
     },
     {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "9712519143"
-    },
-    {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "9782865184"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 30000,
-      "number": "9790896602"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 40000,
-      "number": "9830392458"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 20000,
-      "number": "9845287381"
-    },
-    {
       "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 50000,
       "number": "9833017688"
     },
     {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 7000,
-      "number": "9863228465"
-    },
-    {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "9871209668"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-18",
-      "amt": 5000,
-      "number": "9878674798"
-    },
-    {
       "agent": "NOHARIN KHANAM",
       "date": "2026-07-17",
       "amt": 100000,
       "number": "9886654214"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-19",
-      "amt": 200000,
-      "number": "9895890701"
-    },
-    {
-      "agent": "Vanshree Dhobi",
-      "date": "2026-07-18",
-      "amt": 100000,
-      "number": "9891958260"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-19",
-      "amt": 60000,
-      "number": "9922920305"
-    },
-    {
-      "agent": "NOHARIN KHANAM",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "9924088936"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 40000,
-      "number": "9942527747"
     },
     {
       "agent": "NOHARIN KHANAM",
@@ -5488,40 +4996,16 @@
       "number": "9928828358"
     },
     {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 50000,
-      "number": "9975757979"
-    },
-    {
       "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 30000,
       "number": "9987213689"
     },
     {
-      "agent": "Devendra Regar",
-      "date": "2026-07-18",
-      "amt": 75000,
-      "number": "9986124241"
-    },
-    {
       "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 50000,
       "number": "9986894966"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "7397874903"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-19",
-      "amt": 7000,
-      "number": "7503123064"
     },
     {
       "agent": "Devendra Regar",
@@ -5546,12 +5030,6 @@
       "date": "2026-07-17",
       "amt": 10000,
       "number": "8147978212"
-    },
-    {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 50000,
-      "number": "8190842065"
     },
     {
       "agent": "Vanshree Dhobi",
@@ -5584,12 +5062,6 @@
       "number": "9351898998"
     },
     {
-      "agent": "Bhawna kanwar",
-      "date": "2026-07-18",
-      "amt": 15000,
-      "number": "9399198943"
-    },
-    {
       "agent": "Kajal Saini",
       "date": "2026-07-17",
       "amt": 150000,
@@ -5608,22 +5080,10 @@
       "number": "9643143145"
     },
     {
-      "agent": "Kajal Saini",
-      "date": "2026-07-18",
-      "amt": 10000,
-      "number": "9647105107"
-    },
-    {
       "agent": "Devendra Regar",
       "date": "2026-07-17",
       "amt": 20000,
       "number": "9668459605"
-    },
-    {
-      "agent": "Kiran Malii",
-      "date": "2026-07-18",
-      "amt": 20000,
-      "number": "9718243125"
     },
     {
       "agent": "Bhawna kanwar",
@@ -5636,6 +5096,546 @@
       "date": "2026-07-17",
       "amt": 50000,
       "number": "9744611017"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "6003466225"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "6376583832"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "6372955690"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 85000,
+      "number": "7002294852"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 25000,
+      "number": "7032722127"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "7033579213"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "7066872990"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "7250088551"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7207592839"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "7289823355"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7457061312"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 75000,
+      "number": "7411365947"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7648024358"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 7000,
+      "number": "7694955656"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7668093062"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 7000,
+      "number": "7727862777"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7892094725"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "7905450912"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 85000,
+      "number": "8056686880"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "8076906693"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 25000,
+      "number": "8073286315"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "8304967436"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "8500825699"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 25000,
+      "number": "8533068371"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "8591116524"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 15000,
+      "number": "8618657559"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 35000,
+      "number": "8617084635"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "8698443893"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 60000,
+      "number": "8754406139"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "8892205557"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 7000,
+      "number": "8928284287"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "8948055199"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 7000,
+      "number": "8888111656"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9024249937"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9001644162"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "9140708621"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9130933756"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 75000,
+      "number": "9158061499"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "9144926568"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "9159442125"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "9334419365"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9301630834"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9348719912"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "9315373672"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 25000,
+      "number": "9316683462"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9414931596"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9536877887"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 100000,
+      "number": "9551287952"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "9538623831"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 60000,
+      "number": "9606312815"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 75000,
+      "number": "9624167501"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9638981970"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "9712519143"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "9782865184"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 30000,
+      "number": "9790896602"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 40000,
+      "number": "9830392458"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 7000,
+      "number": "9863228465"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "9871209668"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-18",
+      "amt": 5000,
+      "number": "9878674798"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-18",
+      "amt": 100000,
+      "number": "9891958260"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 40000,
+      "number": "9942527747"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-18",
+      "amt": 75000,
+      "number": "9986124241"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "7397874903"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 50000,
+      "number": "8190842065"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-18",
+      "amt": 15000,
+      "number": "9399198943"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-18",
+      "amt": 10000,
+      "number": "9647105107"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-18",
+      "amt": 20000,
+      "number": "9718243125"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-19",
+      "amt": 50000,
+      "number": "6309436639"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 15000,
+      "number": "6392993813"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "7501792145"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-19",
+      "amt": 10000,
+      "number": "7995284884"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-19",
+      "amt": 50000,
+      "number": "8343080149"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-19",
+      "amt": 50000,
+      "number": "8445602414"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-19",
+      "amt": 50000,
+      "number": "8482988170"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-19",
+      "amt": 60000,
+      "number": "8607665673"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-19",
+      "amt": 10000,
+      "number": "8695224074"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "8948840375"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-19",
+      "amt": 40000,
+      "number": "9128224720"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-19",
+      "amt": 20000,
+      "number": "9178313831"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "9328266432"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-19",
+      "amt": 10000,
+      "number": "9594583029"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "9599093929"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "9628683814"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-19",
+      "amt": 30000,
+      "number": "9666417143"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 20000,
+      "number": "9845287381"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-19",
+      "amt": 200000,
+      "number": "9895890701"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-19",
+      "amt": 60000,
+      "number": "9922920305"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "9924088936"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 50000,
+      "number": "9975757979"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-19",
+      "amt": 7000,
+      "number": "7503123064"
     },
     {
       "agent": "Kajal Saini",
@@ -6508,6 +6508,24 @@
       "number": "9901145920"
     },
     {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-22",
+      "amt": 20000,
+      "number": "8115138256"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-22",
+      "amt": 15000,
+      "number": "8106900746"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-22",
+      "amt": 25000,
+      "number": "9137347072"
+    },
+    {
       "agent": "Kiran Malii",
       "date": "2026-07-23",
       "amt": 100000,
@@ -6938,6 +6956,420 @@
       "date": "2026-07-23",
       "amt": 20000,
       "number": "9607064950"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 50000,
+      "number": "6001627582"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 35000,
+      "number": "6204657311"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 50000,
+      "number": "6361239282"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "6367595982"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "6378008033"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 100000,
+      "number": "6385266771"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 40000,
+      "number": "7005691979"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 100000,
+      "number": "7035399386"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 20000,
+      "number": "7057681986"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "7060984011"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "7080923484"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 60000,
+      "number": "7207273864"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 5000,
+      "number": "7209677662"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "7398150979"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 75000,
+      "number": "7385999733"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "7505417704"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "7667184005"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 5000,
+      "number": "7639227236"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 150000,
+      "number": "7598172575"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 100000,
+      "number": "7679111345"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 20000,
+      "number": "7721016021"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "7905089892"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 25000,
+      "number": "7972615871"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 15000,
+      "number": "8008954832"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 50000,
+      "number": "8095323188"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 25000,
+      "number": "8146625198"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 150000,
+      "number": "8187804622"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 200000,
+      "number": "8320693686"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 100000,
+      "number": "8369278131"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 50000,
+      "number": "8604403921"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 200000,
+      "number": "8530811820"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 25000,
+      "number": "8619534031"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 5000,
+      "number": "8778649478"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 20000,
+      "number": "8823848349"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "8886316457"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 40000,
+      "number": "9000098897"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 20000,
+      "number": "9101030701"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 65000,
+      "number": "9113911992"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "9140320750"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 100000,
+      "number": "9198341018"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 5000,
+      "number": "9330120761"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 5000,
+      "number": "9366632536"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9372697669"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 70000,
+      "number": "9518656428"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "9555082489"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 50000,
+      "number": "9549958181"
+    },
+    {
+      "agent": "Vanshree Dhobi",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9554072588"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 65000,
+      "number": "9579099840"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 25000,
+      "number": "9597367742"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "9602686467"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "9606171867"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 75000,
+      "number": "9727546291"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "9746035468"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "9816566167"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 10000,
+      "number": "9854510673"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 200000,
+      "number": "9880671505"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 135000,
+      "number": "9871656137"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 40000,
+      "number": "9875319176"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 75000,
+      "number": "9885240035"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9890011033"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 75000,
+      "number": "9898364999"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 15000,
+      "number": "9917487453"
+    },
+    {
+      "agent": "NOHARIN KHANAM",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9936077377"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 75000,
+      "number": "9952090182"
+    },
+    {
+      "agent": "Devendra Regar",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9946764928"
+    },
+    {
+      "agent": "Kiran Malii",
+      "date": "2026-07-24",
+      "amt": 7000,
+      "number": "9959067485"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 30000,
+      "number": "9970607091"
+    },
+    {
+      "agent": "Kajal Saini",
+      "date": "2026-07-24",
+      "amt": 25000,
+      "number": "9986035928"
+    },
+    {
+      "agent": "Bhawna kanwar",
+      "date": "2026-07-24",
+      "amt": 20000,
+      "number": "9970017666"
     }
   ]
 }
